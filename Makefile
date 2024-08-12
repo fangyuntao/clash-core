@@ -1,6 +1,6 @@
 NAME=clash
 BINDIR=bin
-VERSION=$(shell git describe --tags || echo "unknown version")
+VERSION=$(shell git describe --tags --always --dirty=-modified || echo "1.18")
 BUILDTIME=$(shell date -u)
 GOBUILD=CGO_ENABLED=0 go build -trimpath -ldflags '-X "github.com/fangyuntao/clash-core/constant.Version=$(VERSION)" \
 		-X "github.com/fangyuntao/clash-core/constant.BuildTime=$(BUILDTIME)" \
